@@ -26,13 +26,23 @@ class Enemy{
 
   move(){
     let newY = this.y + this.speed * this.directionY
-  
+    this.checkCollision()
     if( newY >= 0 && newY <= 700 - this.height){
       this.y = newY
       this.sprite.style.top = this.y + 'px'
     } else {
       this.remove()
     }
+  }
+
+  checkCollision(){
+    if ( this.x < player.x + player.width &&
+      this.y < player.y + player.height &&
+      this.x + this.width > player.x &&
+      this.y + this.height > player.y) {
+      this.remove()
+      player.remove()
+      }
   }
 
 

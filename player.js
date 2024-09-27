@@ -18,16 +18,21 @@ class Player{
     playField.appendChild(this.sprite)
   }
 
-  move(){
+  remove(){
+    playField.removeChild(this.sprite)
+    clearInterval(movePlayerInterval)
+  }
 
+  move(){
   let newX = this.x + this.speed * this.directionX
 
   if( newX >= 0 && newX <= 600 - this.width){
     this.x = newX
     this.sprite.style.left = this.x + 'px'
   }
-  
   }
+
+ 
 
 }
 
