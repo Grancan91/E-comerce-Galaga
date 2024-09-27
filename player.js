@@ -5,6 +5,7 @@ class Player{
     this.lives = 1
     this.width = 50
     this.height = 50
+    this.score = 0
     this.directionX = 0  // -1 = Izquierda   1 = Derecha
     this.speed = 20
     this.sprite = document.createElement('div')

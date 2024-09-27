@@ -2,6 +2,7 @@ let playField = document.getElementById('playfield')
 
 let player
 let enemy
+let bullet
 let enemies = []
 let movePlayerInterval
 let enemiesSpawnInterval
@@ -42,6 +43,11 @@ function newEnemy() {
 
 }
 
+function spawnBullets(){
+  bullet = new Bullet()
+  bullet.insert()
+}
+
 function endGame(){
   clearInterval(enemiesSpawnInterval)
   clearInterval(movePlayerInterval)
@@ -63,6 +69,10 @@ window.addEventListener('keydown', function (event) {
     case 'd':
       player.directionX = 1
       // player.move()
+      break;
+
+    case ' ':
+      spawnBullets()
       break;
   }
 
