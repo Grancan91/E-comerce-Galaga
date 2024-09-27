@@ -5,7 +5,7 @@ class Player{
     this.width = 50
     this.height = 50
     this.directionX = 0  // -1 = Izquierda   1 = Derecha
-    this.speed = 10
+    this.speed = 20
     this.sprite = document.createElement('div')
   }
 
@@ -19,6 +19,7 @@ class Player{
   }
 
   move(){
+
   let newX = this.x + this.speed * this.directionX
 
   if( newX >= 0 && newX <= 600 - this.width){
@@ -26,7 +27,6 @@ class Player{
     this.sprite.style.left = this.x + 'px'
   }
   
-
   }
 
 }
