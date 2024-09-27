@@ -1,1 +1,1 @@
-console.log('Hola mundo!')
+let playField = document.getElementById('playfield')

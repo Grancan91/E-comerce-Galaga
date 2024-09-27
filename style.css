@@ -1,0 +1,7 @@
+#playfield{
+  width: 600px;
+  height: 700px;
+  background-color: rgb(18, 18, 48);
+  margin: 0 auto;
+  position: relative;
+}
