@@ -5,9 +5,9 @@ class Enemy{
     this.y = 0
     this.x = Math.floor(Math.random() * (600 - this.width))
     this.directionY = 1
-    this.speed = 10
+    this.speed = 2
     this.sprite = document.createElement('div')
-    this.interval = setInterval(this.move.bind(this), 100)
+    this.interval = setInterval(this.move.bind(this), 10)
   }
 
   insert(){

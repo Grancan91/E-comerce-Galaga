@@ -1,4 +1,8 @@
 let playField = document.getElementById('playfield')
+let buttonStart = document.getElementById('btn-start')
+let startView = document.getElementById('start')
+let restartView = document.getElementById('restart')
+let score = document.getElementById('score')
 
 let player
 let enemy
@@ -24,13 +28,13 @@ function gameRuning(){
 
 
 function newPlayer() {
-  player = new Player(275, 650)
+  player = new Player(275, 600)
   player.insert()
 
   //movePlayerInterval = setInterval(player.move, 50, player)
   movePlayerInterval = setInterval(function(){
     gameRuning()
-  }, 50)
+  }, 10)
 
 }
 
@@ -55,6 +59,9 @@ function endGame(){
   enemies.forEach(function(enemy){
     enemy.remove()
   })
+
+  playField.style.display = 'none'
+  restart.style.display = 'block'
 
 }
 
@@ -82,4 +89,10 @@ window.addEventListener('keyup', function (event) {
   player.directionX = 0
 })
 
-startGame()
+buttonStart.addEventListener('click', function(event){
+  startGame()
+  playField.style.display = 'block'
+  startView.style.display = 'none'
+
+})
+

@@ -1,13 +1,13 @@
 class Player{
+  static score = 0
   constructor(x, y){
     this.x = x
     this.y = y
     this.lives = 1
-    this.width = 50
-    this.height = 50
-    this.score = 0
+    this.width = 100
+    this.height = 100
     this.directionX = 0  // -1 = Izquierda   1 = Derecha
-    this.speed = 20
+    this.speed = 5
     this.sprite = document.createElement('div')
   }
 

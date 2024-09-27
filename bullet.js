@@ -1,13 +1,13 @@
 class Bullet{
   constructor(){
-    this.height = 30
-    this.width = 100
+    this.height = 50
+    this.width = 8
     this.y = player.y - this.height
     this.x = player.x + player.width / 2 - this.width / 2
     this.directionY = -1
-    this.speed = 20
+    this.speed = 10
     this.sprite = document.createElement('div')
-    this.interval = setInterval(this.move.bind(this), 200)
+    this.interval = setInterval(this.move.bind(this), 20)
   }
 
   insert(){
@@ -43,7 +43,8 @@ class Bullet{
         enemy.y + enemy.height > self.y) {
         enemy.remove()
         enemies.splice(index, 1)
-        player.score += 1
+        Player.score += 1
+        score.innerText = 'SCORE ' + Player.score
         self.remove()
         }
     })

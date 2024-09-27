@@ -4,31 +4,72 @@
   background-color: rgb(18, 18, 48);
   margin: 0 auto;
   position: relative;
+  display: none;
 }
 
 #player{
-/*   width: 50px;
-  height: 50px; */
-  background-color: aqua;
-/*   top: 650px;
-  left: 275px; */
   position: absolute;
+  background-image: url('./sprites/ship.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .enemy{
-  /*   width: 50px;
-    height: 50px; */
-    background-color: rgb(255, 0, 0);
-  /*   top: 650px;
-    left: 275px; */
     position: absolute;
+    background-image: url('./sprites/alien.png');
+    background-size: cover;
+    background-position: center;
   }
 
   .bullet{
-    /*   width: 50px;
-      height: 50px; */
-      background-color: rgb(242, 255, 0);
-    /*   top: 650px;
-      left: 275px; */
       position: absolute;
-    }
+      background-image: url('./sprites/maverick.png');
+      background-size: cover;
+      background-position: center;
+  }
+
+  #start{
+    width: 600px;
+    height: 700px;
+    background-color: rgb(18, 18, 48);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  #restart{
+    width: 600px;
+    height: 700px;
+    background-color: rgb(18, 18, 48);
+    margin: 0 auto;
+    position: relative;
+    display: none;
+  }
+
+  #btn-start {
+    width: 200px;
+    /* Ajusta el tamaño del botón */
+    padding: 15px;
+    position: absolute;
+    /* Usamos posición absoluta para centrar el botón */
+    top: 50%;
+    /* Centrado vertical */
+    left: 50%;
+    /* Centrado horizontal */
+    transform: translate(-50%, -50%);
+    /* Ajusta el botón para que esté perfectamente centrado */
+  }
+
+
+#btn-restart {
+  width: 200px;
+  /* Ajusta el tamaño del botón */
+  padding: 15px;
+  position: absolute;
+  /* Usamos posición absoluta para centrar el botón */
+  top: 50%;
+  /* Centrado vertical */
+  left: 50%;
+  /* Centrado horizontal */
+  transform: translate(-50%, -50%);
+  /* Ajusta el botón para que esté perfectamente centrado */
+}
