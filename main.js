@@ -1,8 +1,27 @@
 let playField = document.getElementById('playfield')
 
+let player
 
-let player = new Player(275, 650)
+function startGame() {
+  player = new Player(275, 650)
+  player.insert()
 
-player.insert()
+}
 
-console.log(player)
+window.addEventListener('keydown', function (event) {
+
+  switch (event.key.toLowerCase()) {
+    case 'a':
+      player.directionX = -1
+      player.move()
+      break;
+
+    case 'd':
+      player.directionX = 1
+      player.move()
+      break;
+  }
+
+})
+
+startGame()

@@ -4,7 +4,7 @@ class Player{
     this.y = y
     this.width = 50
     this.height = 50
-    this.directionX = 0
+    this.directionX = 0  // -1 = Izquierda   1 = Derecha
     this.speed = 10
     this.sprite = document.createElement('div')
   }
@@ -16,6 +16,11 @@ class Player{
     this.sprite.style.top = this.y + 'px'
     this.sprite.style.left = this.x  + 'px'
     playField.appendChild(this.sprite)
+  }
+
+  move(){
+  this.x = this.x + this.speed * this.directionX
+  this.sprite.style.left = this.x + 'px'
   }
 
 }

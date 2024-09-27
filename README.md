@@ -10,4 +10,9 @@
 - Añadir estilo
 - Añadirlo al main.js
 
-# 3. 
+# 3. Crear Player
+
+# 4. Insertar el Player
+
+# 5. Mover el Player
+  - metodo move
