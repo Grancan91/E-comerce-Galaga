@@ -2,6 +2,7 @@ class Player{
   constructor(x, y){
     this.x = x
     this.y = y
+    this.lives = 1
     this.width = 50
     this.height = 50
     this.directionX = 0  // -1 = Izquierda   1 = Derecha

@@ -31,18 +31,22 @@ class Enemy{
       this.y = newY
       this.sprite.style.top = this.y + 'px'
     } else {
+      enemies.shift()
       this.remove()
     }
   }
 
   checkCollision(){
-    if ( this.x < player.x + player.width &&
-      this.y < player.y + player.height &&
-      this.x + this.width > player.x &&
-      this.y + this.height > player.y) {
-      this.remove()
-      player.remove()
-      }
+    enemies.forEach(function(enemy, index){
+      if ( enemy.x < player.x + player.width &&
+        enemy.y < player.y + player.height &&
+        enemy.x + enemy.width > player.x &&
+        enemy.y + enemy.height > player.y) {
+        enemy.remove()
+        enemies.splice(index, 1)
+        player.lives -= 1
+        }
+    })
   }
 
 

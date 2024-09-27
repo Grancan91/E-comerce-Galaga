@@ -2,14 +2,23 @@ let playField = document.getElementById('playfield')
 
 let player
 let enemy
+let enemies = []
 let movePlayerInterval
+let enemiesSpawnInterval
 
 function startGame() {
 
   newPlayer()
   newEnemy()
 
+}
 
+function gameRuning(){
+  if(player.lives > 0){
+    player.move()
+  } else {
+    endGame()
+  }
 }
 
 
@@ -19,17 +28,27 @@ function newPlayer() {
 
   //movePlayerInterval = setInterval(player.move, 50, player)
   movePlayerInterval = setInterval(function(){
-    player.move()
+    gameRuning()
   }, 50)
 
 }
 
 function newEnemy() {
+  enemiesSpawnInterval = setInterval(function(){
+    enemy = new Enemy()
+    enemy.insert()
+    enemies.push(enemy)
+  }, 1000)
 
-  enemy = new Enemy()
-  enemy.insert()
+}
 
-
+function endGame(){
+  clearInterval(enemiesSpawnInterval)
+  clearInterval(movePlayerInterval)
+  player.remove()
+  enemies.forEach(function(enemy){
+    enemy.remove()
+  })
 
 }
 
